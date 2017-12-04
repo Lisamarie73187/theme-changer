@@ -35,13 +35,10 @@ class App extends Component {
     return (
       <div>
         <div className="headerBar">
-          { /* Render EditToggle */ }
-          { /* Render ColorChanger */ }
-          { /* Render SizeChanger */ }
-          { /* Render FamilyChanger */ }
+          <ColorChanger update = {this.updateColor}/>
         </div>
         <div className="textArea">
-          { /* Render TextContainer */ }
+        <TextContainer fontColor = {this.state.fontColor}/>
         </div>
       </div>
     )
