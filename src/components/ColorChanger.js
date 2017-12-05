@@ -8,11 +8,17 @@ export default class ColorChanger extends Component {
     };
   }
 
-  // componentWillReceiveProps
+  componentWillReceiveProps(nextProps){
+    this.setState({ 
+      allowEdit: nextProps.allowEdit
+    })
+  }
+
 
   render() {
+    const { update, allowEdit } =this.props;
     return (
-      <select className="dropDownContainer">
+      <select className="dropDownContainer" onChange={ (e) => update(e.target.value)} disabled={allowEdit === 'false' } >
         <option value="black"> Black </option>
         <option value="blue"> Blue </option>
         <option value="green"> Green </option>
